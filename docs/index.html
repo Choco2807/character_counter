@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head prefix="og: http://ogp.me/ns">
+    <meta charset="utf-8">
+    <title>文字数カウント</title>
+    <meta name="description" content="入力するだけ簡単！文章の文字数を数えることができます．" />
+    <meta property="og:url" content="https://Choco2807.github.io/character_counter" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="文字数カウント" />
+    <meta property="og:site_name" content="文字数カウント" />
+    <meta property="og:description" content="入力するだけ簡単！文章の文字数を数えることができるサイトです．" />
+    <meta property="og:image" content="https://Choco2807.github.io/character_counter/images/ogpimg.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="./css/index.css?ver=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M4FJPQ50Q5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-M4FJPQ50Q5');
+    </script>
+  </head>
+  <body>
+    <header>
+        <h1>文字数カウント</h1>
+        <p>使い方：下のテキストボックスに文字を入力するだけです<br>※このページで入力された情報を外部送信することはありません．</p>
+    </header>
+    <main>
+        <div>
+            <textarea id="text_input" oninput="Count(value);"></textarea>
+            <div>
+                <button onclick="reset();">入力リセット</button>
+            </div>
+            <div id="info_box">
+                <div class="info">
+                    <div><span>文字数（スペース含）：</span></div>
+                    <div><span id="length_all">0</span> 字</div>
+                </div>
+                <div class="info">
+                    <div><span>文字数（スペース除）：</span></div>
+                    <div><span id="length_nospace">0</span> 字</div>
+                </div>
+                <div class="info">
+                    <div><span>行数：</span></div>
+                    <div><span id="length_line">0</span> 行</div>
+                </div>
+                <div class="info">
+                    <div><span>段落数：</span></div>
+                    <div><span id="length_paragraphs">0</span> 段落</div>
+                </div>
+                <div class="info">
+                    <div><span>400字原稿用紙換算：</span></div>
+                    <div><span id="length_manuscript">0</span> 枚</div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p><small>©Copyright 2024, Choco2807, All rights rserved.</small>  <a target="_blank" rel="noopener noreferrer" href="./sitepolicy/">利用規約</a></p>
+    </footer>
+    <script type="text/javascript" src="./js/main.js"></script>
+  </body>
+</html>

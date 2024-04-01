@@ -1,0 +1,30 @@
+body {
+    margin: 0;
+    background-color: #f5f5f7;
+}
+
+header, main {
+    margin: auto;
+    max-width: 1000px;
+    padding: 0 10px;
+}
+
+h1, h2, p {
+    text-align: left;
+}
+
+h1, h2 {
+    margin-bottom: 0;
+}
+
+p {
+    margin-top: 0;
+}
+
+.align_right {
+    text-align: right;
+}
+
+footer p {
+    text-align: center;
+}
