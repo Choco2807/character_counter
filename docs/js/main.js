@@ -1,10 +1,12 @@
 function Count(str) {
-    $("#length_all").text(str.replace(/\n/g, "").length);
-    $("#length_nospace").text(str.replace(/\s+/g, "").length);
+    const segmenter = new Intl.Segmenter("ja", { granularity: "grapheme" });
+
+    $("#length_all").text([...segmenter.segment(str.replace(/\n/g, ""))].length);
+    $("#length_nospace").text([...segmenter.segment(str.replace(/\s+/g, ""))].length);
     if (str != "") {
         $("#length_line").text((str.match(/\n/g) || []).length + 1);
         $("#length_paragraphs").text((str.match(/\n\s+/g) || []).length + 1);
-        $("#length_manuscript").text(Math.ceil(str.replace(/\n/g, "").length / 400));
+        $("#length_manuscript").text(Math.ceil([...segmenter.segment(str.replace(/\n/g, ""))].length / 400));
     } else {
         $("#length_line").text(0);
         $("#length_paragraphs").text(0);
